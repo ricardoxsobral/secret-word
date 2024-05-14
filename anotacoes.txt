@@ -1,0 +1,7 @@
+Index.css:
+- Serve para os css GLOBAIS, por exemplo aplicar estilo em todos os H1s, Ps, Spans, Buttons e etc. Até mesmo nas tags body, footer e etc.
+
+App.css:
+- Aplico o css importantes para o compononente pai no caso o App.jsx, como por exemplo se uma aplicação for toda centralizada, se por exemplo se o app for um card com o BG diferente da cor do index, ali seria onde deve aplicar.
+
+cursor: pointer -> faz com o que o cursor do mouse mude, como se aquela div fosse algo clicavel.
