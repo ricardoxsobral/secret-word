@@ -5,3 +5,16 @@ App.css:
 - Aplico o css importantes para o compononente pai no caso o App.jsx, como por exemplo se uma aplicação for toda centralizada, se por exemplo se o app for um card com o BG diferente da cor do index, ali seria onde deve aplicar.
 
 cursor: pointer -> faz com o que o cursor do mouse mude, como se aquela div fosse algo clicavel.
+
+const variavel = Object.keys(nome-do-objeto) -> Faz com armazene os indicies de um objeto dentro de uma variavel
+
+variavel[Math.floor(Math.random() * Object.keys(variavel).length)];
+-----------------------------------------------------------------
+Object.keys(variavel).length -> Acessando cada indicie por valor
+Math.random() -> fazendo um calculo para me dar um indice aleatorio
+Math.floor(Math.random() * Object.keys(variavel).length) -> Já que o indice aleatorio vem por padrão quebrado com o MathRandom, estou usando o math.floor para arrendondar o indice
+
+
+
+
+
