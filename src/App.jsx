@@ -21,7 +21,12 @@ function App() {
 
   const [pickedWord, setPickedWord] = useState("");
   const [pickedCategory, setPickedCategory] = useState("");
-  const [pickedLetter, setPickedLetter] = useState([]);
+  const [letters, setLetters] = useState([]);
+
+  const [guessedLetters, setGuessedLetters] = useState([]);
+  const [wrongLetters, setWrongLetters] = useState([]);
+  const [guess, setGuesses] = useState(3);
+  const [score, setScore] = useState(0);
 
   const pickWordAndCategory = () => {
     //Puxando uma categoria aleátoria pelo o indice do objeto Words
@@ -49,13 +54,13 @@ function App() {
 
     setPickedWord(word);
     setPickedCategory(category);
-    setPickedLetter(wordLetters);
+    setLetters(wordLetters);
 
     setGameStage(stages[1].name);
   }
 
-  const verifyLetter = () => {
-    setGameStage(stages[2].name);
+  const verifyLetter = (letter) => {
+    console.log(letter);
   }
 
   const retryGame = () => {
@@ -66,7 +71,18 @@ function App() {
     <>
       <div className="App">
         {gameStage === 'start' && <Start startGame={startGame} />}
-        {gameStage === 'game' && <Game verifyLetter={verifyLetter} />}
+        {gameStage === 'game' && (
+          <Game 
+            verifyLetter={verifyLetter} 
+            pickedWord={pickedWord} 
+            pickedCategory={pickedCategory} 
+            letters={letters}
+            guessedLetters={guessedLetters}
+            wrongLetters={wrongLetters}
+            guess={guess}
+            score={score} 
+          />
+        )}
         {gameStage === 'end' && <End retryGame={retryGame} />}
       </div>
     </>
