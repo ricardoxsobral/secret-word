@@ -60,8 +60,28 @@ function App() {
   }
 
   const verifyLetter = (letter) => {
-    console.log(letter);
+    const normalLetter = letter.toLowerCase();
+
+    // verifica se a letra já foi utilizada, sendo ela certa ou errada
+    if(guessedLetters.includes(normalLetter) || wrongLetters.includes(normalLetter)){
+      return;
+    } 
+
+    if(letters.includes(normalLetter)){
+      setGuessedLetters((actualGuessedLetters) => [
+        ...actualGuessedLetters,
+        normalLetter,
+      ]);
+    } else {
+      setWrongLetters((actualWrongLetters) => [
+        ...actualWrongLetters,
+        normalLetter,
+      ]);
+    }
   }
+
+  console.log(guessedLetters);
+  console.log(wrongLetters);
 
   const retryGame = () => {
     setGameStage(stages[0].name);
