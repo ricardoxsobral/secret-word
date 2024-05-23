@@ -1,10 +1,11 @@
 import "./End.css"
 
-function End({retryGame}) {
+function End({retryGame, score}) {
     return(
         <>
             <div className="End">
-                <h1>GameOver</h1>
+                <h1>Fim de Jogo!</h1>
+                <h2>Sua Pontuação foi de {score} pontos</h2>
                 <button onClick={retryGame}>Resetar o jogo</button>
             </div>
         </>
