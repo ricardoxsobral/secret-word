@@ -4,6 +4,7 @@ import { useState, useRef } from "react"
 
 function Game({
     verifyLetter,
+    retryGame,
     pickedCategory,
     pickedWord,
     letters,
@@ -11,7 +12,7 @@ function Game({
     wrongLetters,
     guess,
     score,
-})  {
+}) {
 
     const [letter, setLetter] = useState("");
     const letterRef = useRef(null);
@@ -47,20 +48,27 @@ function Game({
                         )
                     )}
                 </div>
-                <div className="letterContainer">
+                <div className="textLetter">
                     <p>Tente adivinha uma letra da palavra:</p>
-                    <form onSubmit={handleSubmit}>
-                        <input 
-                        type="text" 
-                        name="letter" 
-                        maxLength="1" 
-                        required 
-                        onChange={(e) => setLetter(e.target.value)}
-                        value={letter}
-                        ref={letterRef}
-                        ></input>
-                        <button>Jogar</button>
-                    </form>
+                </div>
+                <div className="lettersAndOut">
+                    <div className="letterContainer">
+                        <form onSubmit={handleSubmit}>
+                            <input
+                                type="text"
+                                name="letter"
+                                maxLength="1"
+                                required
+                                onChange={(e) => setLetter(e.target.value)}
+                                value={letter}
+                                ref={letterRef}
+                            ></input>
+                            <button>Jogar</button>
+                        </form>
+                    </div>
+                    <div className="surrender">
+                        <button onClick={retryGame}>Sair</button>
+                    </div>
                 </div>
                 <div className="wrongLettersContainer">
                     <p>Letras já utilizadas:</p>

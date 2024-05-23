@@ -5,7 +5,7 @@ function End({retryGame, score}) {
         <>
             <div className="End">
                 <h1>Fim de Jogo!</h1>
-                <h2>Sua Pontuação foi de {score} pontos</h2>
+                <h2>Sua Pontuação foi de <span>{score}</span> pontos</h2>
                 <button onClick={retryGame}>Resetar o jogo</button>
             </div>
         </>
