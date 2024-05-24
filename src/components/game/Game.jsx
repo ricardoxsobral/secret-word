@@ -30,13 +30,13 @@ function Game({
         <>
             <div className="Game">
                 <p className="points">
-                    <span>Pontuação: {score}</span>
+                    <p>Pontuação: <span>{score}</span></p>
                 </p>
-                <h1>Adivinhe a palavra:</h1>
+                <h1>ADIVINHE A PALAVRA: </h1>
                 <h3 className="tip">
                     Dica sobre a palavra: <span>{pickedCategory}</span>
                 </h3>
-                <p>Você ainda tem {guess} tentativas</p>
+                <p className="guess">Você ainda tem <span>{guess}</span> tentativas</p>
                 <div className="wordContainer">
                     {letters.map((letter, i) =>
                         guessedLetters.includes(letter) ? (
